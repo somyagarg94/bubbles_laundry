@@ -107,8 +107,17 @@ span.psw {
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
     <label for="psw"><b>Roles</b></label>
+
+    <select name="role">
+  <option value="customer">Customer</option>
+  <option value="retailer">Retailer</option>
+  <option value="supplier">Supplier</option>
+  <option value="wholesaler">Wholesaler</option>
+</select>
+
+<!-- 
     <div class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color:rgb(143, 163, 185)">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" name="role" style="background-color:rgb(143, 163, 185)">
               Roles
             </button>
             <div class="dropdown-menu">
@@ -118,9 +127,10 @@ span.psw {
               <a class="dropdown-item" href="roles/wholesaler.html">Wholesaler</a>
             </div>
           </div>
-    <button type="submit" value="Submit" name="but_submit" id="but_submit" >Login</button>
-  </div>
+    </div> -->
 
+    <button type="submit" value="Submit" name="but_submit" id="but_submit" >Login</button>
+  
 </form>
 
 </body>
