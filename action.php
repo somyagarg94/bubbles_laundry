@@ -27,7 +27,7 @@ if($count==0) {
     $message = "You are successfully authenticated!";
 
     if($_POST["role"] === "retailer"){
-        echo "<b>hi Retailer</b>";
+        include('roles/retailer.html');
     }
 }
 }
@@ -37,6 +37,3 @@ echo $message;
 
 </body>
 </html>
-
-
-"SELECT * FROM users WHERE user_name='" . $_POST["userName"] . "' and password = '". $_POST["password"]."' and role = '". $_POST["role"]."'"
