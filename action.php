@@ -10,8 +10,6 @@ echo "HELLPPPP";
 echo $_POST["uname"];
 echo $_POST["psw"];
 
-function authenticate()
-{
 $message="";
 if(count($_POST)>0) {
     $conn = mysqli_connect('localhost', 'somya', 'password', 'laundry_app');
@@ -30,7 +28,7 @@ if($count==0) {
 }
 }
 echo $message;
-}
+
 ?>
 
 </body>
