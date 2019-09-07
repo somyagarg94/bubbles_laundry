@@ -99,13 +99,13 @@ span.psw {
 
 <h2 style="text-align:center">Welcome back. Please Login.</h2>
 
-<form name="frmUser" method="post" action="authenticate()">
+<form name="frmUser" method="post" action="action.php">
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required id="txt_uname" name="txt_uname">
+    <input type="text" placeholder="Enter Username" name="uname" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required id="txt_uname" name="txt_pwd">
+    <input type="password" placeholder="Enter Password" name="psw" required>
     <label for="psw"><b>Roles</b></label>
     <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color:rgb(143, 163, 185)">
@@ -123,28 +123,5 @@ span.psw {
 
 </form>
 
-<?php
-function authenticate()
-{
-$message="";
-if(count($_POST)>0) {
-    $conn = mysqli_connect('localhost', 'somya', 'password', 'laundry_app');
-    // check connection
- if(!$conn){
-    echo 'Connection error: ' . mysqli_connect_error();
-  }
-
-// make query & get result
-$result = mysqli_query($conn,"SELECT * FROM users WHERE name='" . $_POST["uname"] . "' and password = '". $_POST["psw"]."'");
-$count  = mysqli_num_rows($result);
-if($count==0) {
-    $message = "Invalid Username or Password!";
-} else {
-    $message = "You are successfully authenticated!";
-}
-}
-echo $message;
-}
-?>
 </body>
 </html>
