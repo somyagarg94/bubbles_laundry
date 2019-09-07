@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: rgb(172, 129, 212)">
+
+        <h2 style="text-align:center">Login Success</h2>
+        
+        <h3 style="text-align: center"> Welcome Supplier</h3>
+        <p style="text-align: center">Date/Time: <span id="datetime"></span></p>
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()+1).slice(-2)) +":"+ (("0"+dt.getMinutes()+1).slice(-2));
+</script>
+
+</body>
+</html>
