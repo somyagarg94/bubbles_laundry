@@ -1,3 +1,31 @@
+<?php
+ //Connect to database
+ $conn = mysqli_connect('localhost', 'somya', 'password', 'laundry_app');
+
+// check connection
+ if(!$conn){
+   echo 'Connection error: ' . mysqli_connect_error();
+ }
+
+// write query for all users
+ $sql = 'SELECT name, password,  role  FROM users';
+
+// make query & get result
+ $result = mysqli_query($conn, $sql);
+
+ //fetch the resulting rows as an array
+ $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// free result from memory
+ mysqli_free_result($result);
+
+ //close connection
+ mysqli_close($conn);
+
+ print_r($users);
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,15 +99,13 @@ span.psw {
 
 <h2 style="text-align:center">Welcome back. Please Login.</h2>
 
-<form action="/action_page.php">
-
+<form name="frmUser" method="post" action="authenticate()">
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required id="txt_uname" name="txt_uname">
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required id="txt_uname" name="txt_pwd">
-    
     <label for="psw"><b>Roles</b></label>
     <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="background-color:rgb(143, 163, 185)">
@@ -92,12 +118,33 @@ span.psw {
               <a class="dropdown-item" href="roles/wholesaler.html">Wholesaler</a>
             </div>
           </div>
-        </br>
-    </br>
-    <button type="submit" value="Submit" name="but_submit" id="but_submit">Login</button>
+    <button type="submit" value="Submit" name="but_submit" id="but_submit" >Login</button>
   </div>
 
 </form>
 
+<?php
+function authenticate()
+{
+$message="";
+if(count($_POST)>0) {
+    $conn = mysqli_connect('localhost', 'somya', 'password', 'laundry_app');
+    // check connection
+ if(!$conn){
+    echo 'Connection error: ' . mysqli_connect_error();
+  }
+
+// make query & get result
+$result = mysqli_query($conn,"SELECT * FROM users WHERE name='" . $_POST["uname"] . "' and password = '". $_POST["psw"]."'");
+$count  = mysqli_num_rows($result);
+if($count==0) {
+    $message = "Invalid Username or Password!";
+} else {
+    $message = "You are successfully authenticated!";
+}
+}
+echo $message;
+}
+?>
 </body>
 </html>
