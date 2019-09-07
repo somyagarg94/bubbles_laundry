@@ -6,9 +6,6 @@
 
 
 <?php
-echo "HELLPPPP";
-echo $_POST["uname"];
-echo $_POST["psw"];
 
 $message="";
 if(count($_POST)>0) {
