@@ -22,13 +22,13 @@ if($count==0) {
     if($_POST["role"] === "retailer"){
         include('roles/retailer.html');
     }
-    if($_POST["role"] === "customer"){
+    elseif($_POST["role"] === "customer"){
         include('roles/customer.html');
     }
-    if($_POST["role"] === "wholesaler"){
+    elseif($_POST["role"] === "wholesaler"){
         include('roles/wholesaler.html');
     }
-    if($_POST["role"] === "supplier"){
+    elseif($_POST["role"] === "supplier"){
         include('roles/supplier.html');
     }
 }
