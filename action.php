@@ -33,8 +33,6 @@ if($count==0) {
     }
 }
 }
-echo $message;
-
 ?>
 
 </body>
