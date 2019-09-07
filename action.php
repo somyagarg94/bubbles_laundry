@@ -9,9 +9,9 @@
 if(count($_POST)>0) {
     $conn = mysqli_connect('localhost', 'somya', 'password', 'laundry_app');
     // check connection
- if(!$conn){
+if(!$conn){
     echo 'Connection error: ' . mysqli_connect_error();
-  }
+}
 
 // make query & get result
 $result = mysqli_query($conn,"SELECT * FROM users WHERE name='" . $_POST["uname"] . "' and password = '". $_POST["psw"]."'");
