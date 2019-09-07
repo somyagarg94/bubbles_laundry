@@ -7,8 +7,8 @@
 
 <?php
 echo "HELLPPPP";
-echo $name;
-echo $psw;
+echo $_POST["uname"];
+echo $_POST["psw"];
 
 function authenticate()
 {
