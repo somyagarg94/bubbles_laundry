@@ -4,13 +4,8 @@
 
 <body>
 
-
 <?php
-echo $_POST["uname"];
-echo $_POST["psw"];
-echo $_POST["role"];
 
-$message="";
 if(count($_POST)>0) {
     $conn = mysqli_connect('localhost', 'somya', 'password', 'laundry_app');
     // check connection
@@ -22,12 +17,19 @@ if(count($_POST)>0) {
 $result = mysqli_query($conn,"SELECT * FROM users WHERE name='" . $_POST["uname"] . "' and password = '". $_POST["psw"]."'");
 $count  = mysqli_num_rows($result);
 if($count==0) {
-    $message = "Invalid Username or Password!";
+    include('roles/error.html');
 } else {
-    $message = "You are successfully authenticated!";
-
     if($_POST["role"] === "retailer"){
         include('roles/retailer.html');
+    }
+    if($_POST["role"] === "customer"){
+        include('roles/customer.html');
+    }
+    if($_POST["role"] === "wholesaler"){
+        include('roles/wholesaler.html');
+    }
+    if($_POST["role"] === "supplier"){
+        include('roles/supplier.html');
     }
 }
 }
