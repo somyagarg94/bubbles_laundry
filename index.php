@@ -13,27 +13,23 @@
 <body>
 
     <h2 style="text-align:center">Welcome back. Please Login.</h2>
-
-    <form name="frmUser" method="post" action="action.php">
-        <div class="container">
+    <div>
+        <form name="frmUser" method="post" action="action.php">
             <label for="uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" required>
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
             <label for="role"><b>Roles</b></label>
-            </br>
-            <div class="select">
-                <select name="role">
-                    <option value="customer">Customer</option>
-                    <option value="retailer">Retailer</option>
-                    <option value="supplier">Supplier</option>
-                    <option value="wholesaler">Wholesaler</option>
-                </select>
-            </div>
+            <select name="role">
+                <option value="customer">Customer</option>
+                <option value="retailer">Retailer</option>
+                <option value="supplier">Supplier</option>
+                <option value="wholesaler">Wholesaler</option>
+            </select>
             <button type="submit" value="Submit" name="but_submit" id="but_submit">Login</button>
-    </form>
-
+        </form>
+    </div>
 </body>
 
 </html>
