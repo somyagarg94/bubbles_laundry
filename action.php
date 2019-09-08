@@ -6,7 +6,7 @@
     <?php
 
 if(count($_POST)>0) {
-    $conn = mysqli_connect('localhost', 'somya', 'password123', 'bubbles_app');
+    $conn = mysqli_connect('localhost', 'somya', 'password', 'sg_hw1');
     // check connection
 if(!$conn){
     echo 'Connection error: ' . mysqli_connect_error();
