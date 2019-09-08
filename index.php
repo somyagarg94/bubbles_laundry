@@ -23,12 +23,14 @@
             <input type="password" placeholder="Enter Password" name="psw" required>
             <label for="role"><b>Roles</b></label>
             </br>
-            <select name="role" style="width:200px;">
-                <option value="customer">Customer</option>
-                <option value="retailer">Retailer</option>
-                <option value="supplier">Supplier</option>
-                <option value="wholesaler">Wholesaler</option>
-            </select>
+            <div class="select">
+                <select name="role">
+                    <option value="customer">Customer</option>
+                    <option value="retailer">Retailer</option>
+                    <option value="supplier">Supplier</option>
+                    <option value="wholesaler">Wholesaler</option>
+                </select>
+            </div>
             <button type="submit" value="Submit" name="but_submit" id="but_submit">Login</button>
     </form>
 
