@@ -14,7 +14,9 @@ if(!$conn){
 
 // make query & get result
 $result = mysqli_query($conn,"SELECT * FROM users WHERE name='" . $_POST["uname"] . "' and password = '". $_POST["psw"]."'");
+
 $count  = mysqli_num_rows($result);
+    
 if($count==0) {
     include('roles/error.html');
 } else {
@@ -30,7 +32,7 @@ if($count==0) {
     elseif($_POST["role"] === "supplier"){
         include('roles/supplier.html');
     }
-}
+  }
 }
 ?>
 
