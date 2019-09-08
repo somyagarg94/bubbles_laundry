@@ -44,7 +44,7 @@
             <input type="text" placeholder="Enter Username" name="uname" required>
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="text" placeholder="Enter Password" name="psw" required>
             <label for="role"><b>Roles</b></label>
             <select name="role">
                 <option value="customer">Customer</option>
@@ -52,7 +52,7 @@
                 <option value="supplier">Supplier</option>
                 <option value="wholesaler">Wholesaler</option>
             </select>
-            <button type="submit" value="Submit" name="but_submit" id="but_submit">Login</button>
+            <input type="submit" value="Login" name="but_submit" id="but_submit">
         </form>
     </div>
 </body>
