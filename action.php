@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 
 <body>
 
-<?php
+    <?php
 
 if(count($_POST)>0) {
     $conn = mysqli_connect('localhost', 'somya', 'password', 'laundry_app');
@@ -36,4 +35,5 @@ if($count==0) {
 ?>
 
 </body>
+
 </html>
